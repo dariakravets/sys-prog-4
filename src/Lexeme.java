@@ -1,3 +1,3 @@
 public enum Lexeme {
-    identifier, hexadecimalNum, floatNum, decNum, comment, operator, keyword, delimiter, brackets, name, customString, error
+    identifier, hexadecimalNum, floatNum, decNum, comment, operator, keyword, delimiter, brackets, customString, error
 }

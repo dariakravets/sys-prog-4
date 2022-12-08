@@ -6,7 +6,6 @@ import java.util.Objects;
 public class Analyzer {
     public final String identifier = "$";
     public final String hexadecimalNum = "0123456789ABCDEF";
-    //    public final String floatNum = ".0123456789";
     public final String nums = "0123456789";
     public final String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public final String operator = "+-*<>=^!&|";
@@ -32,7 +31,6 @@ public class Analyzer {
 
     public void analysisResult() {
         String temp = "";
-        int k = 0;
 
         for (int i = 0; i < inputString.length(); i++) {
             switch (q) {
@@ -58,16 +56,6 @@ public class Analyzer {
                         q = 0;
                     } else if (Character.toString(inputString.charAt(i)).equals(" ")) {
                         q = 0;
-                    } else if (allLexemes.size() != 0 && Objects.equals(allLexemes.get(allLexemes.size() - 1).lexeme, "function")) {
-                        if (!Character.toString(inputString.charAt(i)).equals(" ")) {
-                            temp += inputString.charAt(i);
-                            q = 0;
-                        } else {
-                            temp += inputString.charAt(i);
-                            allLexemes.add(new Token(temp, Lexeme.name));
-                            temp = "";
-                            q = 0;
-                        }
                     } else if (letters.contains(Character.toString(inputString.charAt(i)))) {
                         temp += inputString.charAt(i);
                         q = 6;
